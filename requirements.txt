@@ -1,0 +1,4 @@
+argparse
+cryptography
+ed25519
+uuid
