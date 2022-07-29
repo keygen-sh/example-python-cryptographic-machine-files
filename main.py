@@ -74,7 +74,7 @@ except (AssertionError, BadSignatureError):
 
 print('[info] verification successful!')
 
-# Hash the license key using SHA256
+# Hash the license key and fingerprint using SHA256
 digest = hashes.Hash(hashes.SHA256())
 digest.update(args.license.encode())
 digest.update(args.fingerprint.encode())
