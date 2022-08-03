@@ -89,9 +89,9 @@ ciphertext, iv, tag = map(
 # Decrypt ciphertext
 try:
   aes = Cipher(
-  algorithms.AES(key),
-  modes.GCM(iv, None, len(tag)),
-  default_backend(),
+    algorithms.AES(key),
+    modes.GCM(iv, None, len(tag)),
+    default_backend(),
   )
   dec = aes.decryptor()
 
