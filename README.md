@@ -40,7 +40,7 @@ KEYGEN_PUBLIC_KEY='e8601e48b69383ba520245fd07971e983d06d22c4257cfd82304601479cee
 
 The following will happen:
 
-1. The current device will be fingerprinted, using a SHA256-HAMC digest of the
+1. The current device will be fingerprinted, using a SHA256-HMAC digest of the
    device's [machineid](https://github.com/keygen-sh/py-machineid). You may
    want to look into alternative fingerprinting, depending on your expected
    run environment.
