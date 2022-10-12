@@ -18,21 +18,21 @@ file and then run `source ~/.bashrc` after saving the file.
 Next, install dependencies with [`pip`](https://packaging.python.org/):
 
 ```
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 Then run the script, passing in a `path` to a machine file, and a `license`
 key as arguments:
 
 ```bash
-python main.py --license 'A_LICENSE_KEY' \
+python3 main.py --license 'A_LICENSE_KEY' \
   --path /etc/keygen/machine.lic
 ```
 
 Or run one of the pre-defined examples:
 
 ```bash
-KEYGEN_PUBLIC_KEY='e8601e48b69383ba520245fd07971e983d06d22c4257cfd82304601479cee788' python main.py \
+KEYGEN_PUBLIC_KEY='e8601e48b69383ba520245fd07971e983d06d22c4257cfd82304601479cee788' python3 main.py \
   --fingerprint '198e9fe586114844f6a4eaca5069b41a7ed43fb5a2df84892b69826d64573e39' \
   --license 'B10760-1B177D-656D1F-C03298-9AF89E-V3' \
   --path examples/machine.lic
