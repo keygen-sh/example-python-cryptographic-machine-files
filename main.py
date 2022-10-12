@@ -3,7 +3,7 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.backends import default_backend
 from cryptography.exceptions import InvalidKey, InvalidTag
 from ed25519 import BadSignatureError
-from uuid import getnode as get_mac
+import machineid
 import argparse
 import ed25519
 import base64
@@ -11,20 +11,11 @@ import json
 import sys
 import os
 
-def fingerprint():
-  """
-  fingerprint returns a hex-encoded SHA-256 digest of the current MAC address.
-  """
-  mac    = str(get_mac())
-  digest = hashes.Hash(hashes.SHA256())
-  digest.update(mac.encode())
-  return digest.finalize().hex()
-
 parser = argparse.ArgumentParser()
 
-parser.add_argument('-p', '--path',        dest='path',        required=True,         help='Path to machine file (required)')
-parser.add_argument('-l', '--license',     dest='license',     required=True,         help='License key (required)')
-parser.add_argument('-f', '--fingerprint', dest='fingerprint', default=fingerprint(), help='Machine fingerprint')
+parser.add_argument('-p', '--path', dest='path', required=True, help='Path to machine file (required)')
+parser.add_argument('-l', '--license', dest='license', required=True, help='License key (required)')
+parser.add_argument('-f', '--fingerprint', dest='fingerprint', default=machineid.hashed_id('example-app'), help='Machine fingerprint')
 
 args = parser.parse_args()
 

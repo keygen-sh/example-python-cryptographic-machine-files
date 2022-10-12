@@ -1,4 +1,4 @@
+py-machineid
 argparse
 cryptography
 ed25519
-uuid

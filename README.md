@@ -40,9 +40,10 @@ KEYGEN_PUBLIC_KEY='e8601e48b69383ba520245fd07971e983d06d22c4257cfd82304601479cee
 
 The following will happen:
 
-1. The current device will be fingerprinted, using a SHA-256 digest of the
-   device's MAC address. You may want to look into alternative fingerprinting,
-   depending on your expected environment.
+1. The current device will be fingerprinted, using a SHA256-HAMC digest of the
+   device's [machineid](https://github.com/keygen-sh/py-machineid). You may
+   want to look into alternative fingerprinting, depending on your expected
+   run environment.
 1. The machine file's authenticity will be verified using Ed25519, by verifing
    its signature using the public key.
 1. The machine file will be decrypted using the license key and fingerprint
