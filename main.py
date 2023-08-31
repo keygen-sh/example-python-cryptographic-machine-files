@@ -31,8 +31,8 @@ except (FileNotFoundError, PermissionError):
   sys.exit(1)
 
 # Strip the header and footer from the machine file certificate
-payload = machine_file.lstrip('-----BEGIN MACHINE FILE-----\n') \
-                      .rstrip('-----END MACHINE FILE-----\n')
+payload = machine_file.removeprefix('-----BEGIN MACHINE FILE-----\n') \
+                      .removesuffix('-----END MACHINE FILE-----\n')
 
 # Decode the payload and parse the JSON object
 data = json.loads(base64.b64decode(payload))
